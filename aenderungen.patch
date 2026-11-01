@@ -25,6 +25,37 @@ index d26b3a8..88c3391 100644
      Ok(())
  }
  
+diff --git a/packages/core/src/setup.rs b/packages/core/src/setup.rs
+index ab5f685..d8c1881 100644
+--- a/packages/core/src/setup.rs
++++ b/packages/core/src/setup.rs
+@@ -21,20 +21,17 @@ pub const VERSION: u32 = 1;
+ /// deletes it.
+ pub const RETIRED: &str = "baseline-retired";
+ 
+-pub const NEEDED: &str = "Swofty needs a one-time setup before modded play: open Swofty Launcher and press Play, \
+-                          or run `swofty setup reset`, verify the game files, then run `swofty setup done`";
++pub const NEEDED: &str = "Der ERC Launcher richtet das Spiel einmalig ein: Spielordner zuruecksetzen, Spieldateien \
++                          pruefen, Einrichtung abschliessen. Starte den Launcher erneut, er macht das von selbst.";
+ 
+ /// What stops a build whose record of original game files names backups
+ /// that are gone from the data folder.
+ pub fn backups_missing(files: &[String]) -> String {
+-    let (backups, are) = match files.len() {
+-        1 => ("backup", "is"),
+-        _ => ("backups", "are"),
+-    };
++    let backups = if files.len() == 1 { "backup" } else { "backups" };
+     format!(
+-        "Swofty's {backups} of the original {} {are} missing from its data folder. Run the one-time setup again: \
+-         open Swofty Launcher and press Play, or run `swofty setup reset`, repair the game in the EA app or verify \
+-         the game files in Steam, then run `swofty setup done`",
++        "Die {backups} der Originaldateien {} fehlen im Datenordner. Die einmalige Einrichtung muss wiederholt \
++         werden: Spielordner zuruecksetzen, Spieldateien pruefen (im EA-Programm oder in Steam reparieren), dann \
++         die Einrichtung abschliessen. Der ERC Launcher macht das beim naechsten Start.",
+         crate::stock::names(files)
+     )
+ }
 diff --git a/packages/core/src/ui/patch.rs b/packages/core/src/ui/patch.rs
 index a56873f..86a2b2c 100644
 --- a/packages/core/src/ui/patch.rs
