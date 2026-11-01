@@ -5,7 +5,7 @@
 # Ergebnis: .\arbeit\SwoftyLauncher\target\release\swofty.exe
 $ErrorActionPreference = "Stop"
 
-$fassung = "v1.7.5"
+$fassung = "v1.7.13"
 $hier = Split-Path -Parent $MyInvocation.MyCommand.Path
 $arbeit = Join-Path $hier "arbeit"
 $quelle = Join-Path $arbeit "SwoftyLauncher"

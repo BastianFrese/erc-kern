@@ -39,7 +39,7 @@ für die mitgelieferten DLLs — für die CLI selbst genügt Rust.
 
 ```powershell
 # 1. Quelltext der veröffentlichten Fassung holen
-git clone --depth 1 --branch v1.7.5 https://github.com/Swofty-Developments/SwoftyLauncher.git
+git clone --depth 1 --branch v1.7.13 https://github.com/Swofty-Developments/SwoftyLauncher.git
 cd SwoftyLauncher
 
 # 2. Diese Änderungen anwenden
