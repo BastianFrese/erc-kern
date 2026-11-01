@@ -15,6 +15,13 @@ ihre eigenen Namen hin. Mehr wird nicht verändert.
 |---|---|---|
 | Startbildschirm, Untertitel | `Launched with Swofty Launcher` | `Gestartet mit dem ERC Launcher` |
 | Hinweisfenster im Spiel | `Swofty Mod v<fassung>` mit Liste „New in v…" | `ERC Mod` mit einem Satz zur ERC-Lobby |
+| Einwilligung vor dem Start | Bedingungen werden beim Start abgefragt | entfällt — der ERC Launcher kümmert sich selbst darum |
+
+> [!warning] **Mit der dritten Änderung fällt die Einwilligung vor dem Start weg.**
+> Spieler sehen damit nicht mehr den Hinweis, dass modifiziertes Fahren ohne EA
+> AntiCheat außerhalb der EA-Bedingungen liegt und EA Konten belangen kann. Das ist eine
+> bewusste Entscheidung des Betreibers. `swofty offline status`, `accept` und `withdraw`
+> funktionieren weiterhin.
 
 Alles andere — Spielstart, Mod-Verwaltung, Netzwerkweg — bleibt unverändert.
 

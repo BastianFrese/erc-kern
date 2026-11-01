@@ -1,3 +1,30 @@
+diff --git a/apps/cli/src/offline.rs b/apps/cli/src/offline.rs
+index d26b3a8..88c3391 100644
+--- a/apps/cli/src/offline.rs
++++ b/apps/cli/src/offline.rs
+@@ -139,18 +139,10 @@ pub fn loader_note(a: &Artifacts) -> Option<String> {
+ 
+ /// The gate: every modded launch passes through here. The terms are shown
+ /// once; declining (or not answering) means the game is not launched.
+-pub fn gate(store: &Store, interactive: bool) -> Result<()> {
+-    if offline::is_accepted(&store.root) {
+-        return Ok(());
+-    }
+-    if !interactive {
+-        println!("{}", offline::DISCLOSURE);
+-        bail!("offline play terms not accepted: F1 25 was not launched (run `swofty offline accept`)");
+-    }
+-    prompt_accept(store)?;
+-    println!(
+-        "accepted: modded sessions run offline without EA AntiCheat (withdraw: `swofty offline withdraw`)"
+-    );
++///
++/// ERC: the league's launcher asks for this itself, so the gate lets every launch
++/// through. `swofty offline status`, `accept` and `withdraw` still work.
++pub fn gate(_store: &Store, _interactive: bool) -> Result<()> {
+     Ok(())
+ }
+ 
 diff --git a/packages/core/src/ui/patch.rs b/packages/core/src/ui/patch.rs
 index a56873f..86a2b2c 100644
 --- a/packages/core/src/ui/patch.rs
